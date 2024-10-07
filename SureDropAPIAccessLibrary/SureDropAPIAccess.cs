@@ -162,13 +162,13 @@ namespace SureDropAPIAccessLibrary
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        return responce.Content.ReadAsStringAsync().Result;
+                        return response.Content.ReadAsStringAsync().Result;
                     }
                     else
                     {
-                        return $"Error: {responce.StatusCode}";
+                        return $"Error: {response.StatusCode}";
                     }
                 }
             }
@@ -215,7 +215,7 @@ namespace SureDropAPIAccessLibrary
 
                     HttpResponseMessage response = client.PostAsync(restURL, content).Result;
 
-                    return responce.Content.ReadAsStringAsync().Result;
+                    return response.Content.ReadAsStringAsync().Result;
 
                 }
             }
@@ -242,15 +242,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/mesh?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -272,15 +272,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/groups?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -303,15 +303,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restUrl = $"{hostUrl}/group/{group}?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restUrl).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -334,15 +334,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/members/{group}/users?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
 
             }
@@ -365,15 +365,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/folders/{group}?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -396,21 +396,21 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/templates/{group}/1?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                        return responceBody;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -433,20 +433,20 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/storage/{group}?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"Error: {(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"Error: {(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -475,9 +475,9 @@ namespace SureDropAPIAccessLibrary
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -500,15 +500,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/storage?format=cache&prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -531,15 +531,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/template/{template}?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -561,15 +561,15 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/users?prefix={company}&username={username}&group={group}&admin=true&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -592,13 +592,13 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     string restURL = $"{hostUrl}/documents/{group}?deleted=false&prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
-                    string responceBody = responce.Content.ReadAsStringAsync().Result;
+                    string responseBody = response.Content.ReadAsStringAsync().Result;
 
-                    return responceBody;
+                    return responseBody;
                 }
             }
             catch (Exception e)
@@ -621,19 +621,19 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     string restURL = $"{hostUrl}/settings?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -657,19 +657,19 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     string restURL = $"{hostUrl}/get_summary_stats?prefix={company}&target_username={target}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -693,19 +693,19 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     string restURL = $"{hostUrl}/activation?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -729,7 +729,7 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
 
                     string restURL = $"{hostUrl}/group?prefix={company}&username={username}&token={token}";
 
@@ -746,14 +746,14 @@ namespace SureDropAPIAccessLibrary
 
                     HttpResponseMessage response = client.PostAsync(restURL, content).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -782,14 +782,14 @@ namespace SureDropAPIAccessLibrary
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -814,19 +814,19 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     string restURL = $"{hostUrl}/notifications/{group}?prefix={company}&username={username}&token={token}&secconds=32";
 
                     HttpResponseMessage response = client.GetAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }
@@ -850,19 +850,19 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     string restURL = $"{hostUrl}/folder/{group}/{folderName}?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.PostAsync(restURL, null).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
 
                 }
@@ -887,7 +887,7 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     file = file.Trim('\"');
                     string fileName = Path.GetFileName(file.Trim('\"'));
 
@@ -901,14 +901,14 @@ namespace SureDropAPIAccessLibrary
 
                     HttpResponseMessage response = client.PostAsync(restURL, content).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
 
                 }
@@ -933,19 +933,19 @@ namespace SureDropAPIAccessLibrary
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    //_token = GetSessionToken();
+
                     string restURL = $"{hostUrl}/group/{group}?prefix={company}&username={username}&token={token}";
 
                     HttpResponseMessage response = client.DeleteAsync(restURL).Result;
 
-                    if (responce.IsSuccessStatusCode)
+                    if (response.IsSuccessStatusCode)
                     {
-                        string responceBody = responce.Content.ReadAsStringAsync().Result;
-                        return responceBody;
+                        string responseBody = response.Content.ReadAsStringAsync().Result;
+                        return responseBody;
                     }
                     else
                     {
-                        return $"{(int)responce.StatusCode}: {responce.StatusCode}";
+                        return $"{(int)response.StatusCode}: {response.StatusCode}";
                     }
                 }
             }

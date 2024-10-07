@@ -130,7 +130,7 @@ namespace SureDropConsoleUI
 
 
             Console.Write("navbarPinned (true/false): ");
-            
+
             string navPin = Console.ReadLine();
             if (navPin == "true")
             {

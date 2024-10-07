@@ -12,7 +12,7 @@ namespace SureDropConsoleUI
 
             while (true)
             {
-                SelectMethod(); 
+                SelectMethod();
             }
         }
 
@@ -51,13 +51,13 @@ namespace SureDropConsoleUI
 
                 case "11": RunGetFoldersGroup(); break;
 
-                case "12": RunGetTemplatesGroup1();break;
+                case "12": RunGetTemplatesGroup1(); break;
 
                 case "13": RunGetStorageGroup(); break;
 
                 case "14": RunGetTemplate(); break;
 
-                case "15": RunGetStorage();break;
+                case "15": RunGetStorage(); break;
 
                 case "16": RunGetTemplateTemplateName(); break;
 
@@ -67,11 +67,11 @@ namespace SureDropConsoleUI
 
                 case "19": RunGetSettings(); break;
 
-                case "20" :RunGetSummaryStats(); break;
+                case "20": RunGetSummaryStats(); break;
 
                 case "21": RunGetActivation(); break;
 
-                case "22": RunPostGroup();break;
+                case "22": RunPostGroup(); break;
 
                 case "23": RunGetUserDataUser(); break;
 
