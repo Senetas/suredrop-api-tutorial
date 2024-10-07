@@ -1,7 +1,7 @@
 # suredrop-api-tutorial
 A tutorial C# application for using the SureDrop REST API
 
-Step by step guide:
+Walkthrough:
 https://github.com/Senetas/SureDrop/wiki/API-session-trace-with-explanations
 
 How to access the swagger definitions:
